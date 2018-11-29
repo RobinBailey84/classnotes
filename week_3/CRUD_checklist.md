@@ -1,6 +1,6 @@
 # ChecklIst for creating CRUD app
 
-1. Plan your classes and DB tables out.
+1. Plan your classes and DB tables out. Create Database
 
 2. Start with simplest class (i.e The `one` side of relationships)
 
@@ -8,7 +8,7 @@
 
 4. Create a console file and create instance of class. Test with pry.
 
-5. Create database and table.
+5. Create table in database.
 
 6. Create SqlRunner class with a self.run method
 
