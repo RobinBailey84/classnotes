@@ -6,7 +6,7 @@
 
 3. Create Ruby class to match.
 
-4. Create a console file and create instance of class. Test with pry
+4. Create a console file and create instance of class. Test with pry.
 
 5. Create database and table.
 
@@ -14,6 +14,8 @@
 
 7. Create save and delete_all methods for class
 
-8. Repeat steps 2 to 7 for each other class.
+8. Test these in console
 
-9. Add in any other methods needed (update, delete, find, etc)
+9. Repeat steps 2 to 7 for any other class.
+
+10. Add in any other methods needed (update, delete, find, etc)
