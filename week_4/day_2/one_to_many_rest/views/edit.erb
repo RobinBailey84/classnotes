@@ -4,11 +4,7 @@
   <input type="hidden" value="<%= @order.id %>">
   <select name="customer_id">
     <% for customer in @customers %>
-    <% if customer.id == @order.customer().id %>
-            <option selected value=<%= customer.id %> ><%= customer.pretty_name() %></option>
-          <% else %>
-            <option value=<%= customer.id %>><%= customer.pretty_name%></option>
-          <% end %>
+      <option <%= 'selected' if customer.id == @order.customer_id %> value="<%=customer.id %>"><%= customer.pretty_name() %> </option>
     <% end %>
   </select>
 
@@ -18,11 +14,7 @@
   <label for="topping">Topping:</label>
   <select name="topping">
     <% for topping in @toppings %>
-      <% if topping == @order.topping %>
-        <option selected value="<%=topping%>"><%=topping%></option>
-        <% else %>
-          <option value="<%=topping%>"><%=topping%></option>
-      <%end %>
+      <option <%= 'selected' if topping == @order.topping %> value="<%=topping %>"><%= topping %> </option>
     <% end %>
   </select>
 
