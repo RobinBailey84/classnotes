@@ -1,4 +1,4 @@
-# Course Schedule
+# Ruby Schedule
 
 ## Week 1 - Programming Fundamentals (Ruby)
 
