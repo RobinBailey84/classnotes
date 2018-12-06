@@ -1,0 +1,19 @@
+<h1>All Students</h1>
+
+<hr />
+<div class="row">
+  <p>(Click on a students name for details)</p>
+</div>
+<div class="student">
+
+  <% for student in @students %>
+  <div class="student-info">
+
+    <p>Name: <a class="name" href="/students/<%= student.id %>"> <%= student.pretty_name %></a></p>
+    <p>House: <%= student.house.name %></p>
+
+    <hr />
+  </div>
+  <% end %>
+
+</div>

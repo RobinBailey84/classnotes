@@ -1,0 +1,16 @@
+<div class="container" id="show-container">
+
+  <h1><%= @student.pretty_name %></h1>
+  <div class="row">
+    <div class="student-info">
+
+      <img class="house_logo" src="<%= @student.house().url %>" alt="gryffindor_logo">
+      <h3>Age: <%= @student.age %></h3>
+      <h3>House: <%= @student.house().name %></h3>
+      <a class="button" href="/students/<%=@student.id%>/edit">Edit</a>
+      <form action="/students/<%=@student.id%>/delete" method="POST">
+        <input type="submit" value="Delete">
+      </form>
+    </div>
+  </div>
+</div>

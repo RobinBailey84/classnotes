@@ -1,0 +1,19 @@
+<h1>All Houses</h1>
+
+<hr />
+<div class="row">
+  <p>(Click on a house name for details)</p>
+</div>
+<div class="student">
+
+  <% for house in @houses %>
+  <div class="student-info" id="<%= house.name %>">
+    <a class="name" href="/houses/<%= house.id %>">
+    <img class="house_logo" src="/images/<%= house.name.downcase%>_logo.jpg" alt="<%= house.name.downcase%> logo">
+  </a>
+
+    <hr />
+  </div>
+  <% end %>
+
+</div>
