@@ -1,4 +1,4 @@
 # Course Schedules
 
 
-### [Ruby Schdule](./schedule/ruby.md)
+### [Ruby Schedule](./schedule/ruby.md)
