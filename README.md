@@ -3,4 +3,4 @@
 
 ### [Ruby Schedule](./schedule/ruby.md)
 
-### [JavaScript Schedule](./schedule/javascript.)
+### [JavaScript Schedule](./schedule/javascript.md)
