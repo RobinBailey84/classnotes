@@ -58,3 +58,36 @@
   - Forms
   - DOM Rendering
 - Intro to Context 
+
+## Week 2
+
+### Mon
+
+- Webpack
+- Intro to Pub/Sub Pattern
+- HW - Pub/Sub and Webpack - Wordcounter
+
+### Tue
+
+- Modular Frontend Lab
+- Modular Frontend with PubSub Lab - Planets
+- HW - Modular Frontend with PubSub - Instruments
+
+### Wed
+
+- Requests - RESTful API
+- Requests Lab - Countries
+- HW - Reusable Nested Views - Continents
+
+### Thurs
+
+- Promises & fetch
+- Reusable Nested Views Lab - Munros
+
+### Weekend
+
+- Build a Web App - 
+  + Requests
+  + Pub/Sub Pattern
+  + Modular Views
+  + Display Data
