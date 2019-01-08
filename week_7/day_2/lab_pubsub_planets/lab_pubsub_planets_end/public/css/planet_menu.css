@@ -1,0 +1,17 @@
+nav.planets-menu {
+  background-color: #dddfd4;
+  min-height: 100vh;
+  grid-column-start: 1;
+}
+
+a.planet-menu-item {
+  display: block;
+  color: #173e43;
+  cursor: pointer;
+  padding: 0.175rem;
+}
+
+a.planet-menu-item:hover {
+  color: #fae596;
+  background-color: #173e43;
+}
