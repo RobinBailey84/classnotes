@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#logo {
+  margin: 0;
+  padding: 16px;
+}
+
+#breed-form {
+  padding: 16px;
+}
+
+#dog-container {
+  line-height: 0;
+  -webkit-column-count: 1;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 1;
+  -moz-column-gap: 0px;
+  column-count: 1;
+  column-gap: 0px;
+}
+
+#dog-container img {
+  width: 100%;
+}
