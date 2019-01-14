@@ -57,7 +57,7 @@
   - Events
   - Forms
   - DOM Rendering
-- Intro to Context 
+- Intro to Context
 
 ## Week 2
 
@@ -86,8 +86,30 @@
 
 ### Weekend
 
-- Build a Web App - 
+- Build a Web App -
   + Requests
   + Pub/Sub Pattern
   + Modular Views
   + Display Data
+  ## Week 3
+
+### Mon
+
+- Intro to Express (Static Files)
+- Express Rest API
+- MongoDB Intro
+- HW - Full Stack App Preparation - Games Hub
+
+### Tue
+
+- MongoDB with Server
+- Full Stack POST Lab - Bird Watching
+
+### Wed
+- Advanced Git & GitHub
+- Full Stack Lab - Bucketlist
+
+### Thurs
+
+- Agile
+- Projects 
