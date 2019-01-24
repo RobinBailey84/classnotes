@@ -5,4 +5,4 @@
 
 ### [JavaScript Schedule](./schedule/javascript.md)
 
-### [Careers Week Schedule](./schedule/careers_week.md)
+### [Careers Week Schedule](./schedule/career_week.md)
