@@ -4,7 +4,7 @@
 
 ```
 1.1 - Describe conventional and contemporary approaches to software development
-	
+
 ```
 
 Describe the approaches to software development including: advantages and disadvantages; phases and iteration in the development process; and factors affecting your choice of this approach.
@@ -27,13 +27,16 @@ Select an Agile approach such as Scrum or Kanban, produce an Agile Product Roadm
 
 In the link you will find all of these topics covered;
 
-	*Waterfall 
-	*Agile 
-	*Prototyping 
-	*Incremental
+You will need to be able to identify various advantages of:
+	*Waterfall
+	*Agile
+	*Incremental*
+
+and various disadvantages of:
+	*Prototyping
 	*Spiral
-	*RAD 
-  
+	*RAD
+
 [Software Development Life Cycle](http://www.tutorialspoint.com/sdlc/index.htm)
 
 
@@ -44,8 +47,8 @@ In the link you will find all of these topics covered;
 ```
 1.2 - Describe analysis and design tools and models
 
-#### Describe major Analysis and Design tools and models, including: 
-``` 
+#### Identify major Analysis and Design tools and models, including:
+```
 [User Interface Design](http://www.usability.gov/what-and-why/user-interface-design.html)
 
 [Entity Relationship Model](http://www.webopedia.com/TERM/E/entity_relationship_diagram.html)
@@ -72,10 +75,8 @@ This article talks about these characteristics have been looked at in using Ruby
 
 [Qualities of great software](http://practicingruby.com/articles/qualities-of-great-software)  
 
-#### Identify Functional and non functional requirements. 
+#### Identify Functional and non functional requirements from a list.
 
 The following article lists some common examples of functional and non-functional requirements. 
 
 [Functional and non-functional requirements](http://reqtest.com/requirements-blog/functional-vs-non-functional-requirements/)
-
-

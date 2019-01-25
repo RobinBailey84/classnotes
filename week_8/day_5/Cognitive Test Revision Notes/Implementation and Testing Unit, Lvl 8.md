@@ -10,6 +10,7 @@
 
 Programming constructs: Expression, sequence, selection, iteration, predefined function, file handling.
 
+You should be able to identify these given short descriptions.
 ```
 
 [Expression](http://bit.ly/1K4xIrC)
@@ -87,6 +88,8 @@ The array returned will be [1,2,4,5,6,8]
 1.3 - Describe basic software testing methods
 
 Software testing methods: Static testing, Dynamic testing, White box testing, Black box testing
+
+You should be able to identify these from a provided short description.
 ```
 [Static testing](http://whatis.techtarget.com/definition/static-testing)
 
@@ -104,6 +107,8 @@ Software testing levels: unit testing, integration testing, component testing, s
 
 On the link below you will find the following BBC page with all of the following topics covered; Test data, Types of errors.
 
+You should be able to give examples of normal, extreme and exceptional test data.
+
 Click the link and cover the information provided on the 5 pages
 
 [Testing and documenting solutions](http://www.bbc.co.uk/education/guides/zpqpn39/revision/1)
@@ -117,6 +122,8 @@ This  following link covers meaningful identifiers, indentation, providing inter
 1.4 - Describe contemporary programming paradigms
 
 Procedural programming & Object-orientated programming:
+
+You should be able to match each of these programming paradigms to a short description.
 ```
 [OOP vs PP](http://study.com/academy/lesson/object-oriented-programming-vs-procedural-programming.html)
 
