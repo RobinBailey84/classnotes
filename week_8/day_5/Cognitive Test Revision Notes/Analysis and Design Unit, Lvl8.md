@@ -28,14 +28,14 @@ Select an Agile approach such as Scrum or Kanban, produce an Agile Product Roadm
 In the link you will find all of these topics covered;
 
 You will need to be able to identify various advantages of:
-	*Waterfall
-	*Agile
-	*Incremental*
+	- Waterfall
+	- Agile
+	- Incremental
 
 and various disadvantages of:
-	*Prototyping
-	*Spiral
-	*RAD
+	- Prototyping
+	- Spiral
+	- RAD
 
 [Software Development Life Cycle](http://www.tutorialspoint.com/sdlc/index.htm)
 
@@ -77,6 +77,6 @@ This article talks about these characteristics have been looked at in using Ruby
 
 #### Identify Functional and non functional requirements from a list.
 
-The following article lists some common examples of functional and non-functional requirements. 
+The following article lists some common examples of functional and non-functional requirements.
 
 [Functional and non-functional requirements](http://reqtest.com/requirements-blog/functional-vs-non-functional-requirements/)
