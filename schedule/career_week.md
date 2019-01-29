@@ -38,4 +38,4 @@
 ### Friday
 
 - PDA cognitive tests: 10:00 - 12:00
-- Consolodatoin time (Work on CV/PDA/Brand)
+- Consolodation time (Work on CV/PDA/Brand)
