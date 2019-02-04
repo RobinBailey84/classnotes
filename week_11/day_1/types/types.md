@@ -4,14 +4,27 @@
   - Exposure to numeric types and booleans.
   - Using JUnit to test.
 
-
 ## Testing with JUnit
 
 We're going to start doing TDD just like we used to in Ruby. This will help us practice our new language and see how we can do the same thing we used to do, but in a Java friendly way.
 
-> Give out start point
+> Create new Maven project called 'types_testing'
+> Create a Bear class with property name and a getter
 
-We're going to write some tests for our Bear class, and the convention is to name the test file the class name plus 'Test', so in this case BearTest.
+```java
+public class Bear {
+    private String name;
+
+    public Bear(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return this.name;
+    }
+}
+```
+
+Now we're going to write some tests for our Bear class, and the convention is to name the test file the class name plus 'Test', so in this case BearTest.
 
 To add test classes to our program we will create them in the test folder.
 
@@ -301,7 +314,7 @@ class Bear{
 }
 ```
 
-In this case if the condition is true the method will return true and the remainder of the method isn't run. 
+In this case if the condition is true the method will return true and the remainder of the method isn't run.
 
 ## char
 The `char` type is used to store a single character. We use the SINGLE quotes to define the value.

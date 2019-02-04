@@ -1,18 +1,25 @@
 public class Calculator {
-
-    public int add(int num1, int num2){
-        return num1 + num2;
+    public Calculator() {
     }
 
-    public int subtract(int num1, int num2){
-        return num1 - num2;
+    public int add(int firstNumber, int secondNumber){
+        return firstNumber + secondNumber;
     }
 
-    public int multiply(int num1, int num2){
-        return num1 * num2;
+    public int subtract(int firstNumber, int secondNumber){
+        return firstNumber / secondNumber;
     }
 
-    public double divide(int num1, int num2){
-        return num1 / num2;
+    public int multiply(int firstNumber, int secondNumber){
+        return firstNumber * secondNumber;
     }
+
+    public int divide(int firstNumber, int secondNumber){
+        return firstNumber / secondNumber;
+    }
+
 }
+
+
+
+

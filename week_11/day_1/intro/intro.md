@@ -137,16 +137,16 @@ Create New Project
 
 ```
 
-We are going to use a tool called Gradle to help us with our applications.
+We are going to use a tool called Maven to help us with our applications.
 
-Gradle is a dependancy management tool that will allow us to add libraries to our application that we will need to use. Remember in ruby we did all those gem install commands to add libraries to our programs? Gradle does a similar thing.
+Maven is a dependancy management tool that will allow us to add libraries to our application that we will need to use. Remember in ruby we did all those gem install commands to add libraries to our programs? Maven does a similar thing.
 
-We will explore Gradle in more depth as we go through this course.  
+We will explore Maven in more depth as we go through this course.  
 
 ```
 # IntelliJ
 
-Click on Gradle in the left hand pane
+Click on Maven in the left hand pane
 Make sure java is checked in right hand pane
 Next
 
@@ -314,17 +314,17 @@ In order to manage so many classes and to reduce the complexity, system designer
 We won't go into any depth about these just now but we will fill in the blanks for each as we go along.
 
 > Instructor: Write SOLID and 4 pillars as headings on board
-> 
+>
 > For Reference. SOLID stands for:
-> 
+>
 > - **S**ingle responsibility principle
 > - **O**pen/closed principle
 > - **L**iskov substitution principle
 > - **I**nterface segregation principle
 > - **D**ependency inversion principle
-> 
+>
 > 4 Pilars are:
-> 
+>
 > - Abstraction,
 > - Encapsulation,
 > - Polymorphism,

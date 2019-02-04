@@ -1,26 +1,24 @@
 public class Printer {
-
-    private int paperCount;
+    private int paper;
+    private int initialPaperCount;
     private int tonerVolume;
 
-    public Printer(int paperCount, int tonerVolume) {
-        this.paperCount = paperCount;
+    public Printer(int paper, int tonerVolume) {
+        this.paper = paper;
+        this.initialPaperCount = paper;
         this.tonerVolume = tonerVolume;
     }
 
-    public int getPaperCount() {
-        return paperCount;
-    }
+    public void print(int pages, int copies){
+        int totalPages = pages * copies;
 
-    public int getTonerVolume() {
-        return tonerVolume;
-    }
-
-    public void print(int copies, int pages){
-        int totalPages = copies * pages;
-        if (totalPages < paperCount){
-            this.paperCount -= totalPages;
-            this.tonerVolume -= totalPages;
+        if (paper > totalPages){
+            paper -= totalPages;
+            tonerVolume -= totalPages;
         }
+    }
+
+    public void refill(){
+        this.paper = initialPaperCount;
     }
 }
