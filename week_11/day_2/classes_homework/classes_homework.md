@@ -12,4 +12,4 @@ Create your own library class with an internal collection of books.
 * Add a third class which interacts with the other two. E.g. you could add a `Borrower` with a method that takes a `Book` and moves to the `Borrower`'s collection.
 
 ## Advanced Extension
-* The library wants to keep track of it's number of books by genre. Using a HashMap, store the genre of each book as the key - and a count of how many books of that genre as the value.
+* The library wants to keep track of it's number of books by genre. Write a function in the Library class that takes in a genre (as a String) and returns the number of books of that genre.
