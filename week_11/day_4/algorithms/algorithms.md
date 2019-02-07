@@ -4,15 +4,15 @@
 
 ### Learning Objectives
 
--  Know what an algorithm is
-- Understand how we can measure the effectiveness of an algorithm
+- Know what an algorithm is
 - Understand Binary search and Linear Search
+- Understand how we can measure the effectiveness of an algorithm
 
 ## Intro
 
 Do you know what an algorithm is? You might think that you don't. You might imagine
 that it's something complicated or difficult. You might have heard phrases like
-"quick sort" or "binary search" and just tuned out.
+"bubble sort" or "binary search" and just tuned out.
 
 But really it's super simple: an algorithm is a strategy for solving a problem.
 
@@ -45,13 +45,97 @@ The first is the absolute simplest: randomly guess a name each time. Say there a
 Initially we will have a 1/24 chance of guessing correctly. If we make a correct guess, then we're done, but if we guess incorrectly then we simply remove that person and pick another random name.
 Each time we have a slightly better chance of choosing correctly: 1/24, 1/23, 1/22... and at some point we have to guess the right name.
 
-The second is slightly more complicated. Roughly 50% of the people in the game have any given characteristic. E.g. half of the people are men and the other half women, half of them wear glasses and half do not, etc.
+In programming this is known as a Linear Search.
 
-Thus we simply pick a characteristic and ask whether the opponent's chosen person has it.
+### Linear Search: searching an array.
 
-Eventually we will be left with only one person, so we're done.
+Let's say we want to search the following ArrayList for a given number:
 
-So which of these algorithms is 'better'?
+```java
+[ 1, 3, 7, 8, 9, 21, 23, 45, 56 ];
+```
+
+#### Linear Search
+
+We could write some code to do that, using a "Linear Search". Don't let the name
+put you off - you've probably written one of these before.
+
+> Hand out start point.
+
+You will see that we have 4 tests set up in `SearchTest` class.
+
+Uncomment the 2 linear search tests.
+
+To get these tests passing we will write our linear search method in the `Search` class.
+
+In a linear search we loop through the collection and compare each entry in turn. If the entry matches our search term we will return true. If the loop manages to complete we will return false.
+
+```java
+//Search.java
+
+public class Search {
+
+  public Boolean linearSearch(ArrayList<Integer> array, int search_number) {
+    for (int number : array)
+    if (number == search_number){
+      return true;
+    }
+    return false;
+  }
+}
+```
+
+> https://en.wikipedia.org/wiki/Linear_search
+
+We might ask, quite sensibly, if we can find a faster approached to this problem.
+
+
+#### Binary Search
+
+So in guess who the 2nd way is to half the number of possibilities each time.
+
+Can we apply a similar
+approach to the problem of looking through a sorted array?
+
+> Think about this for a while. See if anyone can describe an approach.
+
+Of course, it turns out we can. And we do it like this:
+- Pick the middle item in the array.
+- If it's our number, then we're done. Otherwise, check if our number is bigger or smaller than it.
+- If it's bigger(/smaller), repeat the process with the second(/first) half of the array,
+
+In programming this is how a binary search works. (Note that this only works on sorted arrays)
+
+To do this in Java is really complicated but let's have a look...
+
+```java
+public static Boolean binarySearch(ArrayList<Integer> array, int searchNumber){
+  if (array.size() == 0){
+    return false;
+  }
+
+  int midIndex = 0;
+  if (array.size() >1) {
+    midIndex = (int) Math.ceil((double) array.size() / 2);
+  }
+
+  int midPoint = array.get(midIndex);
+
+  if (searchNumber == midPoint){
+    return true;
+  }
+
+  ArrayList<Integer> newSearchArea;
+
+  if (searchNumber < midPoint){
+    newSearchArea = new ArrayList<Integer>(array.subList(0, midIndex - 1));
+  } else {
+    newSearchArea = new ArrayList<Integer>(array.subList(midIndex + 1, array.size()));
+  }
+  return binarySearch(newSearchArea, searchNumber);
+}
+
+```
 
 ### Time Complexity
 
@@ -144,7 +228,8 @@ guessing both the average and the worst case scenario increase much more slowly.
 
 ### Comparison
 
-So which algorithm's better? Well clearly at very low values of `n` it doesn't make that much of a difference.
+So which algorithm's better?
+Well clearly, at very low values of `n`, it doesn't make that much of a difference.
 However as `n` gets very large, using the characteristics to halve the choice of people each time is very obviously
 significantly faster.
 You'd be guaranteed to win a game of Guess Who with 80,000 people to choose between in 20 turns.
@@ -155,8 +240,10 @@ We've seen that one useful measurement of how good an algorithm we're using is
 how long it takes to run. (n.b. We can also look at, e.g., how much space the
 algorithm requires in memory). We've also seen that it can be helpful to generalise
 how an algorithm performs in terms of `n` - the size of the data the algorithm
-is working on. In Guess Who, our best choice was a lot more obvious when we
-looked at it in terms of `n` than when we just considered some small test values.
+is working on.
+
+In Guess Who, our best choice was a lot more obvious when we
+looked at it in terms of `n`, rather than when we just considered some small test values.
 
 In order to fully formalise these comparisons we use a type of mathematical
 notation called 'Big O Notation.' We've actually already done the hard part of
@@ -184,30 +271,28 @@ Answers: `O(n^3)`, `O(n^2)`, `O(n*log(n))`, `O(log(n))`
 
 > These shouldn't cause too much trouble. The last two are a little harder, but following the rules should make them self-explanatory. Finding the dominant term in example 4 might cause some trouble. If so, just look at the values of `1/n` and `log(n)` as `n` gets big. `1/n` gets closer and closer to 0, whereas `log(n)` continues to grow, albeit slowly.
 
-### Guess Who - Formal Analysis
 
-We can now formally analyse our algorithms from earlier.
+This link might help gain a bit more understanding: https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
 
-*Name guessing*:
+## Analysing our search algorithms
 
-  - Best: `O(1)`
-  - Average: `O(n)`
-  - Worst: `O(n)`
+Let's analyse the linear search.
+*Best case*: `O(1)` since our number will be first
+*Worst case*: `O(n)` as we'll have to traverse the whole array
+*Average case*: `O(n)` for the same reasons as the Guess Who name guessing
 
-*Characteristic guessing*:
-
-  - Best: `O(log(n))`
-  - Average: `O(log(n))`
-  - Worst: `O(log(n))`
-
-> This link might help students understand: https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
+Let's analyse the performance of binary search now.
+*Best case*: `O(1)` - this is pretty simple. Sometimes, when we're very lucky, the number we want will be the midpoint.
+*Worst case*: `O(log(n))` - a little more tricky to work out, but the reasoning is the same as when we did the Guess Who example.
+*Average case*: `O(log(n))` again, exactly the same as Guess Who.
 
 ## Algorithmic Optimisation
 
 As we've seen, we can have many methods for solving a problem, each with their
 own algorithmic complexity. A big problem in computing is the concept of
-algorithmic optimisation. What we mean by that is trying to improve an algorithm
-so that it's time complexity is slower-growing. For example we might start with
+algorithmic optimisation.
+
+What we mean by that is trying to improve an algorithm so that it's time complexity is slower-growing. For example we might start with
 a `O(n)` algorithm and try to improve it to get to a `O(log(n))` one.
 
 We do this in everyday life, too! When cutting carrots it's simpler to cut it
@@ -216,80 +301,8 @@ when we're debugging our code we often try to find out what method an error is i
 and then check each line in there, rather than searching line-by-line through the
 whole program.
 
-### Example: searching a sorted array.
 
-Let's say we want to search the following ArrayList for a given number:
-
-```java
-[ 1, 3, 7, 8, 9, 21, 23, 45, 56 ];
-```
-
-#### Linear Search
-
-We could write some code to do that, using a "Linear Search". Don't let the name
-put you off - you've probably written one of these before.
-
-```java
-public Boolean linearSearchSortedArray(int search_number, ArrayList<Integer> sorted_array) {
-  for (int number : sorted_array)
-  if (number == search_number){
-    return true;
-  }
-  return false;
-}
-```
-
-Let's analyse this like we did before.
-*Best case*: `O(1)` since our number will be first
-*Worst case*: `O(n)` as we'll have to traverse the whole array
-*Average case*: `O(n)` for the same reasons as the Guess Who name guessing
-
-> https://en.wikipedia.org/wiki/Linear_search
-
-We might ask, quite sensibly, if we can find a faster approached to this problem.
-Ideally, we'd want one with `O(log(n))` time complexity.
-
-#### Binary Search
-
-Our `O(log(n))` approach to Guess Who worked by halving the people we had to
-search through each time, leaving us with only one. Can we apply a similar
-approach to the problem of looking through a sorted array?
-
-> Think about this for a while. See if anyone can describe an approach.
-
-Of course, it turns out we can. And we do it like this:
-- Pick the middle item in the array.
-- If it's our number, then we're done. Otherwise, check if our number is bigger or smaller than it.
-- If it's bigger(/smaller), repeat the process with the second(/first) half of the array,
-
-To do this in Java is really complicated but let's have a look...
-
-```java
-public static Boolean binarySearchArrayList(int search_number, ArrayList<Integer> array){
-  if (array.size() == 0){
-    return false;
-  }
-
-  int middle_index = 0;
-  if (array.size() >1) {
-    middle_index = (int) Math.ceil((double) array.size() / 2);
-  }
-
-  int midpoint = array.get(middle_index);
-
-  if (search_number == midpoint){
-    return true;
-  }
-
-  ArrayList<Integer> new_search_area = search_number < midpoint ? new ArrayList<Integer>(array.subList(0, middle_index-1)) : new ArrayList<Integer>(array.subList(middle_index+1, array.size()));
-  return binarySearchArrayList(search_number, new_search_area);
-}
-```
-
-Let's analyse the performance of binary search now.
-*Best case*: `O(1)` - this is pretty simple. Sometimes, when we're very lucky, the number we want will be the midpoint.
-*Worst case*: `O(log(n))` - a little more tricky to work out, but the reasoning is the same as when we did the Guess Who example.
-*Average case*: `O(log(n))` again, exactly the same as Guess Who.
+### Sorting
 
 There are a number of algorithms available to use shown below.
 
@@ -304,9 +317,12 @@ There are a number of algorithms available to use shown below.
 * Jump search
 * Fibonacci search
 
-There are also good resources found here:
+This web page gives good examples of sorting algorithms:
 
 [Sorting Algorithms](https://visualgo.net/bn/sorting?slide=1)
+
+
+There are also a number of resources available to research the different algorithms:
 
 [Sorting Algorithms](https://www.toptal.com/developers/sorting-algorithms)
 
