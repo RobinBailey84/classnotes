@@ -1,0 +1,57 @@
+
+h1, h2, h3 {
+  font-family: 'Anton', sans-serif;
+}
+
+p, label, li {
+  font-family: 'Oswald', sans-serif;
+}
+
+button {
+  font-family: 'Oswald', sans-serif;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: #fff;
+  background-color: skyblue;
+  border: none;
+}
+
+.addButton {
+  font-size: 30px;
+}
+
+.removeButton{
+  font-size: 15px;
+}
+
+#selectedBeerImg {
+  height: 200px;
+}
+
+.favouritesBeerImg {
+  width: 100px;
+  padding: 20px;
+}
+
+.ingredient {
+  padding: 20px;
+}
+
+#description {
+  width: 40%;
+  padding-left: 20px
+}
+
+#favourites_list, #ingredientsContainer, #beerInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.favourite_beer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-self: center;
+  flex: 0 0 175px;
+}

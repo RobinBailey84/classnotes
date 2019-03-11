@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>WORD COUNTER</title>
+	<script type="text/javascript" src="js/bundle.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Timmana" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div id="app">
+
+		<h1>{{title}}</h1>
+
+			<label for="phrase">Enter some text:</label>
+			<textarea v-model= "phrase" required id = "phrase" class="text-input"></textarea>
+			<button v-on:click="countWords">Count words</button>
+
+		<h2>{{resultDisplay}}</h2>
+
+	</div>
+</body>
+</html>

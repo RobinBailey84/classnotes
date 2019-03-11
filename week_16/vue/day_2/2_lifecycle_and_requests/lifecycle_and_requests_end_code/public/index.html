@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Vue Countries</title>
+	<script src="./js/bundle.js"></script>
+</head>
+<body>
+
+	<h1>Countries App</h1>
+
+	<div id="app">
+		<label for="country_select">Select a Country:</label>
+		<select id="country_select" v-model="selectedCountryIndex" v-on:change="countrySelect">
+			<option disabled value="">Select a country</option>
+			<option v-for="(country, index) in countries" :value="index">{{country.name}}</option>
+		</select>
+
+		<div id="selected_country" v-if="selectedCountry">
+			<h1> {{selectedCountry.name}} </h1>
+			<h2> Population: {{selectedCountry.population}} </h2>
+			<img style="height: 100px" :src="selectedCountry.flag" />
+			<button v-on:click="addToFavourites">Add Country</button>
+		</div>
+
+		<div id="favourite_countries">
+			<h2>Favourite Countries</h2>
+			<ul>
+				<li v-for="country in favouriteCountries">{{country.name}}</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

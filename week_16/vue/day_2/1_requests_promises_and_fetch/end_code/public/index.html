@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>RANDOGMISER</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="text/javascript" src="./js/bundle.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h1>RANDOGMISER</h1>
+    <img id="dogImg" v-if="dogImgLink" :src="dogImgLink">
+    <button v-on:click="fetchDog">Gimme those dogs!</button>
+  </div>
+
+</body>
+</html>

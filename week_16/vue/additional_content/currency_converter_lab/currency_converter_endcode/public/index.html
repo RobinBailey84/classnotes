@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Currency Converter</title>
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+  <div id="app">
+    <label for="currencySelect">Select Currency:</label>
+    <select v-model="selectedCurrency" id="currencySelect">
+      <option disabled value="">Select Currency</option>
+      <option v-for="(value, key) in rates" :value="key">{{ key }}</option>
+    </select>
+
+    <h3>Convert From Euros</h3>
+    <form class="" v-on:submit="calcFromEuros">
+        <label for="euroInput">Euros:</label>
+        <input type="number" min="0" id="euroInput" v-model="euroValue">
+        <input type="submit" value="Calc Exchange">
+    </form>
+    <p v-if="fromEurosResult">{{ fromEurosResult }} {{ selectedCurrency }} </p>
+    <br>
+
+    <h3>Convert To Euros</h3>
+    <form class="" v-on:submit="calcToEuros">
+      <label for="currencyInput">{{ selectedCurrency ? selectedCurrency  : 'Select a currency'}}:</label>
+      <input type="number" min="0" id="currencyInput" v-model="currencyValue">
+      <input type="submit" value="To Euros">
+    </form>
+
+    <p v-if="toEurosResult && selectedCurrency">{{ toEurosResult}} Euros </p>
+    <br>
+
+    <h3>Calculate Exchange</h3>
+    <form v-on:submit="calcExchange">
+      <label for="">From</label>
+      <select v-model="baseCurrency">
+        <option disabled value="">From</option>
+        <option v-for="(value, key) in rates" :value="key">{{ key }}</option>
+      </select>
+      <label for="">To</label>
+      <select v-model="toCurrency">
+        <option disabled value="">To</option>
+        <option v-for="(value, key) in rates" :value="key">{{ key }}</option>
+      </select>
+      <input type="number" min="0" v-model="exchangeValue">
+      <input type="submit" value="Calculate">
+    </form>
+    <p v-if="exchangeResult"> {{ exchangeResult }} {{ toCurrency }} for {{ exchangeValue }} {{ baseCurrency }}</p>
+  </div>
+</body>
+</html>

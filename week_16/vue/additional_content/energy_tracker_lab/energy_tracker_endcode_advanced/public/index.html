@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Vue Country's Energy Consumption</title>
+	<script src="./js/bundle.js"></script>
+</head>
+<body>
+	<div id="app">
+
+		<h1 v-if="from && to">Generation Mix for the GB power system for {{from.toLocaleString()}} to {{to.toLocaleString()}}</h1>
+
+		<input type="datetime-local" :max="filterTo" v-model="filterFrom"/>
+		<input type="datetime-local" :min="filterFrom" v-model="filterTo"/>
+
+		<button v-if="filterFrom && filterTo" v-on:click="dateSearch">Filter By Date</button>
+
+		<ul id="generationData"/>
+		<li v-if="fuelMix" v-for="mix in fuelMix">
+			{{mix.fuel.toUpperCase()}}: {{mix.perc}}%
+		</li>
+	</ul>
+
+	<select id="chartSelector" v-model="chartType">
+		<option v-for="chartType in chartTypes" :value="chartType + 'Chart'">{{chartType}}</option>
+	</select>
+
+	<GChart
+	v-if="chartData"
+	:type="chartType"
+	:data="chartData"
+	:options="chartOptions"
+	/>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vuedog</title>
+	<script src="./js/bundle.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Anton|Oswald" rel="stylesheet">
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+	<h1 class="title">BREWDOG BEERS</h1>
+
+	<div id="app">
+		<label for="beer_select">Select a Beer:</label>
+		<select id = "beer_select" v-model="selectedBeerIndex" v-on:change = "beerSelect">
+			<option selected disabled>Select a beer</option>
+			<option v-for="(beer, index) in beers" :value= "index">{{beer.name}}</option>
+		</select>
+
+		<div id = "selected_beer" v-if="selectedBeer">
+			<h1> {{selectedBeer.name}} </h1>
+			<div id = "beerInfo">
+				<img id="selectedBeerImg":src="selectedBeer.image_url" />
+				<p id="description">{{selectedBeer.description}}</p>
+			</div>
+			<button class="addButton" v-on:click="addToFavourites"> Add to Favourites</button>
+		</div>
+
+		<h1 v-if="favouritesList.length > 0"> Your Favourites: </h1>
+
+		<div id="favourites_list">
+			<div class="favourite_beer" v-for="(beer, index) in favouritesList">
+				<h2>{{beer.name}}</h2>
+				<img class="favouritesBeerImg":src="beer.image_url" />
+				<button class="removeButton" v-on:click="removeFromFavourites(index)"> Remove from Favourites</button>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
