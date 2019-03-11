@@ -8,3 +8,5 @@
 ### [Careers Week Schedule](./schedule/career_week.md)
 
 ### [Java Schedule](./schedule/java.md)
+
+### [Java Schedule](./schedule/react_schedule.md)
