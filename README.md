@@ -9,4 +9,4 @@
 
 ### [Java Schedule](./schedule/java.md)
 
-### [Java Schedule](./schedule/react_schedule.md)
+### [React Schedule](./schedule/react_schedule.md)
